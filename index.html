@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Aplikasi Pemesanan Tiket Travel</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Aplikasi Pemesanan Tiket Travel <img src="logo-50.png" /></h1>
+
+      <form id="ticket-form">
+        <div class="input-group">
+          <label for="nama">Nama:</label>
+          <input type="text" id="nama" required />
+        </div>
+
+        <div class="input-group">
+          <label for="tujuan">Tujuan:</label>
+          <select id="tujuan" required onchange="showHarga()">
+            <option value="Jakarta">Jakarta</option>
+            <option value="Surabaya">Surabaya</option>
+            <option value="Bandung">Bandung</option>
+            <option value="Semarang">Semarang</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+            <option value="Malang">Malang</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="harga">Harga Tiket:</label>
+          <input type="text" id="harga" required />
+        </div>
+
+        <div class="input-group">
+          <label for="jumlah">Jumlah Tiket:</label>
+          <select id="jumlah" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+
+        <div class="member-group">
+          <label for="member">Member</label>
+          <div class="checkbox-group">
+            <span style="margin-left: 5px">ya</span>
+            <input type="checkbox" id="member" onchange="showDiskon()" />
+          </div>
+        </div>
+
+        <div class="input-group" id="diskonField">
+          <label for="diskon">Diskon (%):</label>
+          <input type="text" id="diskon" readonly />
+        </div>
+
+        <div class="input-group">
+          <label for="total">Total Bayar:</label>
+          <input type="text" id="total" readonly />
+        </div>
+
+        <button type="button" id="hitung">Hitung Total</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
